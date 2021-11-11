@@ -135,16 +135,6 @@ $(function () {
 
     $('tbody').on('click', '.btn-edit', function () {
         var id = $(this).attr('data-id')
-        $.ajax({
-            methpd: 'GET',
-            url: '/my/article/' + id,
-            success: function (res) {
-                if (res.status !== 0) {
-                    return layui.msg('获取文章信息失败')
-                }
-                location.href = '/article/art_pub.html'
-                form.val('formArt', res.data)
-            }
-        })
+        location.href = '/article/art_edit.html?Id=' + id
     })
 })
